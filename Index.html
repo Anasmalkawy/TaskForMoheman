@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project moheman</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="style.css" rel="stylesheet">  
+</head>
+<body>
+  <div class="student-dashboard">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="profile-section">
+        <img src="https://img.freepik.com/premium-vector/vibrant-cartoon-profile-illustration-featuring-cheerful-young-person-with-hooded-sweatshirt-profile-pic-customizable-cartoon-illustration_538213-142537.jpg" 
+             class="profile-img" alt="صورة الطالب">
+        <h3 class="student-name">انس </h3>
+        <p class="student-major">علم حاسوب </p>
+        <span class="badge active-badge">نشط</span>
+      </div>
+
+      <nav class="side-nav">
+        <ul>
+          <li class="active">
+            <a href="javascript:void(0)" onclick="openTab('student-info-content', this)">
+              <i class="fas fa-user-graduate"></i>
+              <span class="nav-text">الملف الشخصي</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="openTab('previous-exams-content', this)">
+              <i class="fas fa-clipboard-list"></i>
+              <span class="nav-text">الامتحانات السابقة</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="openTab('suggested-exams-content', this)">
+              <i class="fas fa-lightbulb"></i>
+              <span class="nav-text">امتحانات مقترحة</span>
+            </a>
+          </li>
+          <li class="logout-item">
+            <a href="javascript:void(0)" onclick="openTab('logout-content', this)">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-text">تسجيل خروج</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Student Information Tab -->
+      <div id="student-info-content" class="content-section active">
+        <div class="tab-header">
+          <h2>الملف الشخصي للطالب</h2>
+        </div>
+        
+        <div class="student-details">
+          <a href="javascript:void(0)" onclick="openEditProfile()" class="edit-profile-btn">
+            <i class="fas fa-edit"></i> تعديل البيانات
+          </a>
+          <div class="detail-row">
+            <span class="detail-label">اسم الطالب:</span>
+            <span class="detail-value">انس ملكاوي</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">رقم الهوية:</span>
+            <span class="detail-value">1234567890</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">القسم:</span>
+            <span class="detail-value">علم حاسوب</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">السنة الدراسية:</span>
+            <span class="detail-value">الثانية</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">المعدل التراكمي:</span>
+            <span class="detail-value">3.75</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">البريد الإلكتروني:</span>
+            <span class="detail-value">anas@example.com</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">رقم الهاتف:</span>
+            <span class="detail-value">0775994747</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Previous Exams Tab -->
+<!-- Previous Exams Tab -->
+<div id="previous-exams-content" class="content-section">
+  <div class="tab-header">
+    <h2>الامتحانات السابقة</h2>
+  </div>
+  
+  <div class="exams-cards-container">
+    <!-- Exam Card 1 -->
+    <div class="exam-card">
+      <div class="exam-card-header">
+        <h3>امتحان الفصل الأول</h3>
+        <span class="exam-date">15-03-2025</span>
+      </div>
+      <div class="exam-card-body">
+        <div class="exam-subject">
+          <i class="fas fa-book"></i>
+          <span>قواعد البيانات</span>
+        </div>
+        <div class="exam-marks">
+          <div class="marks-info">
+            <span class="marks-obtained">84%</span>
+            <span class="marks-total">42/50</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar success" style="width: 84%"></div>
+          </div>
+        </div>
+        <div class="exam-status">
+          <span class="status-badge success">
+            <i class="fas fa-check-circle"></i> ناجح
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Exam Card 2 -->
+    <div class="exam-card">
+      <div class="exam-card-header">
+        <h3>امتحان نصفي</h3>
+        <span class="exam-date">22-03-2025</span>
+      </div>
+      <div class="exam-card-body">
+        <div class="exam-subject">
+          <i class="fas fa-book"></i>
+          <span>تطوير الويب</span>
+        </div>
+        <div class="exam-marks">
+          <div class="marks-info">
+            <span class="marks-obtained">60%</span>
+            <span class="marks-total">18/30</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar warning" style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="exam-status">
+          <span class="status-badge warning">
+            <i class="fas fa-exclamation-circle"></i> مقبول
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Exam Card 3 -->
+    <div class="exam-card">
+      <div class="exam-card-header">
+        <h3>امتحان عملي</h3>
+        <span class="exam-date">05-04-2025</span>
+      </div>
+      <div class="exam-card-body">
+        <div class="exam-subject">
+          <i class="fas fa-book"></i>
+          <span>برمجة جافا</span>
+        </div>
+        <div class="exam-marks">
+          <div class="marks-info">
+            <span class="marks-obtained">60%</span>
+            <span class="marks-total">12/20</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar warning" style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="exam-status">
+          <span class="status-badge warning">
+            <i class="fas fa-exclamation-circle"></i> مقبول
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Suggested Exams Tab -->
+      <div id="suggested-exams-content" class="content-section">
+        <div class="tab-header">
+          <h2>الامتحانات المقترحة</h2>
+        </div>
+        
+        <div class="suggested-exams-container">
+          <div class="exam-card">
+            <div class="exam-header">
+              <h3>امتحان قواعد البيانات المتقدمة</h3>
+              <span class="exam-date">20-06-2025</span>
+            </div>
+            <div class="exam-body">
+              <p>يركز على مفاهيم التطبيع والاستعلامات المتقدمة وإدارة المعاملات في قواعد البيانات العلائقية.</p>
+              <div class="exam-details">
+                <span><i class="fas fa-book"></i> قواعد البيانات</span>
+                <span><i class="fas fa-clock"></i> ساعة ونصف</span>
+                <span><i class="fas fa-graduation-cap"></i> النصفي</span>
+              </div>
+            </div>
+            <div class="exam-footer">
+              <button class="register-btn">التسجيل في الامتحان</button>
+            </div>
+          </div>
+          
+          <div class="exam-card">
+            <div class="exam-header">
+              <h3>امتحان تطوير الويب</h3>
+              <span class="exam-date">25-06-2025</span>
+            </div>
+            <div class="exam-body">
+              <p>يغطي مفاهيم HTML, CSS, JavaScript وتطبيقاتها في بناء مواقع الويب التفاعلية.</p>
+              <div class="exam-details">
+                <span><i class="fas fa-book"></i> تطوير الويب</span>
+                <span><i class="fas fa-clock"></i> ساعتان</span>
+                <span><i class="fas fa-graduation-cap"></i> النهائي</span>
+              </div>
+            </div>
+            <div class="exam-footer">
+              <button class="register-btn">التسجيل في الامتحان</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logout Tab -->
+      <div id="logout-content" class="content-section">
+        <div class="tab-header">
+          <h2>تسجيل الخروج</h2>
+        </div>
+        
+        <div class="logout-confirmation">
+          <div class="logout-message">
+            <i class="fas fa-sign-out-alt"></i>
+            <h3>هل أنت متأكد من رغبتك في تسجيل الخروج؟</h3>
+          </div>
+          <div class="logout-actions">
+            <a href="javascript:void(0)" onclick="openTab('student-info-content', document.querySelector('.side-nav li:first-child a'))" class="btn cancel-btn">إلغاء</a>
+            <button class="btn confirm-btn">تأكيد الخروج</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Profile Popup -->
+  <div id="edit-profile" class="edit-profile-popup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3>تعديل البيانات الشخصية</h3>
+        <a href="javascript:void(0)" onclick="closeEditProfile()" class="close-popup">&times;</a>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="student-name">اسم الطالب:</label>
+          <input type="text" id="student-name" value="انس ملكاوي">
+        </div>
+        <div class="form-group">
+          <label for="student-id">رقم الهوية:</label>
+          <input type="text" id="student-id" value="1234567890">
+        </div>
+        <div class="form-group">
+          <label for="student-department">القسم:</label>
+          <input type="text" id="student-department" value="علم حاسوب ">
+        </div>
+        <div class="form-group">
+          <label for="student-year">السنة الدراسية:</label>
+          <input type="text" id="student-year" value="الثانية">
+        </div>
+        <div class="form-group">
+          <label for="student-email">البريد الإلكتروني:</label>
+          <input type="email" id="student-email" value="anas@example.com">
+        </div>
+        <div class="form-group">
+          <label for="student-phone">رقم الهاتف:</label>
+          <input type="tel" id="student-phone" value="0775994747">
+        </div>
+        <div class="form-group">
+          <label for="student-photo">تحميل صورة</label>
+          <input type="file" id="student-photo" accept="image/*">
+        </div>
+        
+        <div class="form-actions">
+          <a href="javascript:void(0)" onclick="closeEditProfile()" class="btn cancel-btn">إلغاء</a>
+          <a href="javascript:void(0)" onclick="saveProfile()" class="btn save-btn">حفظ التغييرات</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const contentSections = document.querySelectorAll('.content-section');
+    const navItems = document.querySelectorAll('.side-nav li');
+    const editProfilePopup = document.getElementById('edit-profile');
+
+    function openTab(tabId, clickedElement) {
+      contentSections.forEach(section => section.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      
+      navItems.forEach(item => item.classList.remove('active'));
+      clickedElement.parentElement.classList.add('active');
+    }
+    
+    function openEditProfile() {
+      editProfilePopup.classList.add('active');
+    }
+    
+    function closeEditProfile() {
+      editProfilePopup.classList.remove('active');
+    }
+    
+    function saveProfile() {
+      closeEditProfile();
+    }
+  </script>
+</body>
+</html>
